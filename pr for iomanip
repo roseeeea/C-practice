@@ -20,7 +20,7 @@ int main()
     // Calculate total sales
     total = day1 + day2 + day3;
     // Display the sales figures
-    cout << "\nSales Figures\n"; // \n like endle
+    cout << "\nSales Figures\n"; // \n is like endle
     cout << "-------------\n" ;
     cout << setprecision (5); //set the nuber to second decimal place
     cout << "Day 1: " << setw(8) << day1 << endl; // indicate 8 letters length (1)
