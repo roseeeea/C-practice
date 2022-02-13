@@ -23,7 +23,7 @@ int main()
     cout << "\nSales Figures\n"; // \n like endle
     cout << "-------------\n" ;
     cout << setprecision (5); //set the nuber to second decimal place
-    cout << "Day 1: " << setw(8) << day1 << endl; // indicate only 8 bytes, equal to 4 digitals
+    cout << "Day 1: " << setw(8) << day1 << endl; // indicate 8 letters length (1)
     cout << "Day 2: " << setw(8) << day2 << endl;
     cout << "Day 3: " << setw(8) << day3 << endl;
     cout << "Total: " << setw(8) << total << endl;
