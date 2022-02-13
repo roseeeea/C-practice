@@ -1,0 +1,45 @@
+// codes is from internet,http://c.biancheng.net/view/1341.html, here is just my note 
+
+// This program asks for sales figures for three days.
+// The total sales are calculated and displayed in a table.
+
+#include <iostream>
+#include <iomanip> // Header file needed to use stream manipulators
+using namespace std;
+
+int main()
+{
+    double day1, day2, day3, total;
+    // Get the sales for each day
+    cout << "Enter the sales for day 1: ";
+    cin >> day1;
+    cout << "Enter the sales for day 2: ";
+    cin >> day2;
+    cout << "Enter the sales for day 3: ";
+    cin >> day3;
+    // Calculate total sales
+    total = day1 + day2 + day3;
+    // Display the sales figures
+    cout << "\nSales Figures\n"; // \n like endle
+    cout << "-------------\n" ;
+    cout << setprecision (5); //set the nuber to second decimal place
+    cout << "Day 1: " << setw(8) << day1 << endl; // indicate only 8 bytes, equal to 4 digitals
+    cout << "Day 2: " << setw(8) << day2 << endl;
+    cout << "Day 3: " << setw(8) << day3 << endl;
+    cout << "Total: " << setw(8) << total << endl;
+    
+    // compare to following three different ways
+    cout << total << endl;
+    
+    cout << setprecision(3);
+    cout << total << endl;
+    
+    cout << fixed << setprecision(3);
+    cout << total << endl;
+    
+    cout << setw(4);
+    cout << total << endl; 
+    
+    
+    return 0;
+}
