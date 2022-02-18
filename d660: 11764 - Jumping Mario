@@ -1,0 +1,38 @@
+//https://zerojudge.tw/ShowProblem?problemid=d660
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int T;
+	int wall[50];
+	while(cin >> T){
+		for (int c = 1; c<= T; c++){
+			int N;
+			cin >> N;
+			for(int i= 0; i < N; i++){
+				cin >> wall[i];
+			}
+			
+		int QY = 0;
+		int QN = 0;
+			
+				for (int k=0; k < N-1; k++){
+					if (wall[k] > wall[k+1]){
+						
+						QY = QY + 1;
+			
+					}
+					else if (wall[k] < wall[k+1]){ 
+						
+						QN = QN + 1;
+					} 
+			}
+		cout << "Case " << c <<": "<< QN <<" "<< QY << endl;
+			
+				
+		}
+	}
+	return 0;
+}
+	
