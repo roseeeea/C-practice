@@ -1,3 +1,5 @@
+/*
+first try:
 #include <iostream>
 using namespace std;
 
@@ -29,3 +31,43 @@ int main() {
   
   return 0;
   }
+*/
+
+/*
+second try
+#include <iostream>
+using namespace std;
+
+int main() {
+  int k;
+  cin >> k;
+  double K = k*2-3;  //K是總行數,邊長
+  int i=0; //i 是第幾行數
+  
+  while(i < K/2){
+    for(int a=k-2; a>1; a--){
+      cout<< " ";
+    }
+    for(int a=1; a<=2*i+1; a++){
+      cout<<"*";
+    }
+    i = i+1;
+    cout << endl;
+  }
+  
+  while(i<K){
+   for(int a=k-2; a>=1; a--){
+      cout<< " ";
+    }
+    for(int a=0; a<=2*i+1; a++){
+      cout<<"*";
+    }
+    i = i+1;
+    cout << endl;
+  }
+  
+
+  return 0;
+  }
+  */
+  
