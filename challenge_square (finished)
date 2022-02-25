@@ -1,34 +1,39 @@
-
+// the result
 #include<iostream>
 using namespace std;
 
+
 int main() {
-	int n;
-	cin >> n;
+	int k;
+  
+
+  while(cin>>k){
+    int n = k-1;
+    
+	  for(int a=1; a<= n; a++){
+		  for(int j=1; j <=n-a; j++){
+			  cout << " ";	
+	  	}
+		  for(int j=1; j<=2*a-1; j++){
+		  	cout << "*";
+		  }
+		  cout<< endl;
+	  }
+    for(int a=1; a<= n-1; a++){
+		  for(int j=1; j<=a; j++){
+		  	cout << " ";	
+		  }
+		  for(int j=1; j<=2*n-1-2*a; j++){
+		  	cout << "*";
+		  }
+		  cout<< endl;
+	  }
+  }
 	
-	for(int a=1; a<= n; a++){
-		for(int j=1; j <=n-a; j++){
-			cout << " ";	
-		}
-		for(int j=1; j<=2*a-1; j++){
-			cout << "*";
-		}
-		cout<< endl;
-	}
-  for(int a=1; a<= n-1; a++){
-		for(int j=1; j<=a; j++){
-			cout << " ";	
-		}
-		for(int j=1; j<=2*n-1-2*a; j++){
-			cout << "*";
-		}
-		cout<< endl;
-	}
 	
-	
-	
-	return 0;	
+return 0;	
 }
+
 
 
 
@@ -70,7 +75,8 @@ int main() {
   }
 */
 
-/ *second try:
+
+/* second try:
 #include <iostream>
 using namespace std;
 
@@ -105,9 +111,11 @@ int main() {
 
   return 0;
   }
-  */
+*/
 
-*/ third try
+
+
+/* third try:
 #include<iostream>
 using namespace std;
 
@@ -129,4 +137,4 @@ int main() {
 	
 	return 0;	
 }
-/*
+*/
