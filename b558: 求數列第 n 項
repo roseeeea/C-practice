@@ -1,0 +1,22 @@
+//https://zerojudge.tw/ShowProblem?problemid=b558
+#include<iostream>
+using namespace std;
+
+int main() {
+	int f[501]= {0, 1}; 	// preset 501 numbers, make the first and second 1 & 2 ( f(0)=0, f(1)=1)
+	
+	for(int k=2; k<=500; k++){
+		f[k]=f[k-1] + (k-1);
+	}
+	
+	int n;
+	while(cin>> n ){
+		cout << f[n] << endl;
+	
+	}
+	
+	
+	return 0;
+	
+}
+
