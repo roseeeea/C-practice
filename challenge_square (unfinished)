@@ -70,4 +70,26 @@ int main() {
   return 0;
   }
   */
-  
+
+// main 
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	
+	for(int a=1; a<= n; a++){
+		for(int j=a-1; j >= 1; j--){
+			cout << " ";	
+		}
+		for(int j=1; j<=2*a-1; j++){
+			cout << "*";
+		}
+		cout<< endl;
+	}
+	
+	
+	
+	return 0;	
+}
