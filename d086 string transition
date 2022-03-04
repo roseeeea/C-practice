@@ -1,0 +1,35 @@
+//https://zerojudge.tw/ShowProblem?problemid=d086
+#include<iostream>
+using namespace std;
+
+int main(){
+	string s;
+	
+	while(cin>>s && s !="0"){
+		int sum = 0;
+		
+		for(int i=0; i<s.length(); i++){
+			if(s[i]>='a' && s[i]<='z'){
+				int k= s[i]-96;
+				sum = sum + k;			
+			}
+			else if (s[i]>= 'A' && s[i]<= 'Z'){
+				int k= s[i]-64;
+				sum = sum + k;
+			}
+			else{
+				sum = -1;
+				break; 
+			}
+		}
+		
+		if( sum>= 0 ){
+		cout << sum << endl;
+		}
+		else if (sum < 0){
+		cout << "Fail" << endl;
+		}
+	}
+	
+	return 0;	
+}
