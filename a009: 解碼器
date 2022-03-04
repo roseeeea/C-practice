@@ -1,0 +1,33 @@
+//https://zerojudge.tw/ShowProblem?problemid=a009
+
+/* 前情提要
+#include<iostream>
+using namespace std;
+
+int main(){
+	string s = "hello";
+	cout<< s[0] << endl;
+	cout << s[0]+2 << endl;		// 隱性資料轉換 
+	cout << char(s[0]+2) << endl; //強制資料轉換 
+	
+	return 0;
+}
+*/
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	string s;
+	
+	while(getline(cin, s)){ 	//read the string at once  
+		for(int i=0; i<s.length(); i++){
+			cout<< char(s[i]-7);
+		}
+	}
+
+
+	return 0;	
+}
+
