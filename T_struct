@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+struct st{
+		int no;
+		string name;
+		int id;
+};
+
+int main(){
+	st class320[36];
+	for (int i=0; i<36; i++){
+		cin >> class320[i].no>> class320[i].name >> class320[i].id; 
+	}
+
+	for(int i = 0; i<36; i++){
+		cout << class320[i].no << " " << class320[i].name << " " << class320[i].id <<endl;	
+	}
+	return 0;	
+}
