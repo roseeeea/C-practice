@@ -1,3 +1,5 @@
+/*
+
 #include<iostream>
 using namespace std;
 
@@ -17,4 +19,63 @@ int main(){
 		cout << class320[i].no << " " << class320[i].name << " " << class320[i].id <<endl;	
 	}
 	return 0;	
+}
+
+
+*/
+
+/*
+模擬一副撲克牌發給4位玩家 
+
+撲克牌 card
+花色 suit
+	S: 黑桃, H: 紅心, D: 方塊, C: 梅花
+數字 number
+	A: 1, 2~9: 2~9, T: 10, J: 11, Q: 12, K: 13
+*/
+
+#include<iostream>
+#include<cstring>
+#include<stdlib.h>
+#include<ctime>
+
+using namespace std;
+
+struct card {
+	string suit;	//花色
+	string number;	//數字
+};
+
+struct player {
+	string name;
+	card cards[13];
+};
+
+int main() {
+	srand(time(0));	//亂數初始化
+	card cards[52];
+	for (int i = 0; i < 52; i++) {
+		//???
+		//cards[i].suit = ???
+		//cards[i].number = ???
+		
+	}
+	
+	//製造一個0~51的亂數順序
+	//以至於依據order取牌就是打亂順序的牌 cards[order[i]]
+	int order[52];
+	//可以先令order是順序0~51值, 接著掃描一遍對亂數位置做swap
+	//???
+	
+	
+	//亂數發牌給4個玩家
+	player players[4];
+	
+	
+	
+	//將每個玩家手上的牌秀出來
+	
+	
+	
+	return 0;
 }
