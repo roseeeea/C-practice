@@ -1,0 +1,111 @@
+#include<iostream>
+using namespace std;
+
+int cl(int n){
+	int length =1;
+	while(n != 1){
+		if(n%2 == 1){
+			n= 3*n+1;
+		}
+		else{
+			n= n/2;
+		}
+	length ++;
+	}
+	return length;
+	
+}
+
+int main(){
+	int i,j;
+	while(cin >> i >> j ){
+		if (i<= j){
+			int max_cl = -1;
+			for (int n=i; n<= j; n++){
+				if (cl(n) > max_cl){
+					max_cl = cl(n);
+				}
+			}
+			cout << i << " " << j << " " << max_cl << endl;
+		}
+		else if(j < i){
+			int max_cl = -1;
+			for (int n=j; n<= i; n++){
+				if (cl(n) > max_cl){
+					max_cl = cl(n);
+				}
+			}
+			cout << i << " " << j << " " << max_cl << endl;
+		}
+	}
+	return 0;
+	
+}
+
+
+
+
+
+
+
+/*
+include<iostream>
+using namespace std;
+
+int K(int m){
+	if(m==1){
+		return 1;
+	}
+	else if(m%2 != 0){
+		m=3*m+1;
+	}
+	else{
+		m=m/2;
+	}
+}
+
+
+int main(){
+	int i,j;
+	int iarr[1000001];
+	int sum=iarr[0];
+	
+	while(cin>>i>>j){
+		if(i <= j){
+			for( int a=i; a<j+1; a++){
+				iarr[a] = K(a) ;
+			} 
+			for(int A=0; A<=j; A++){
+				
+				if(sum < iarr[A]){
+					sum= iarr[A];
+				}
+				else{
+					sum=sum; 
+				}
+			}
+		}
+		else if(j < i){
+			for( int a=j; a<i; a++){
+				iarr[a] = K(a) ;
+			}
+			for(int A=0; A<=i; A++){
+				
+				if(sum < iarr[A]){
+					sum= iarr[A];
+				}
+				else{
+					sum=sum; 
+				}
+			}
+		
+		} 
+	
+		cout << sum << endl; 	
+	}
+
+
+
+return 0;
+} 
+*/
