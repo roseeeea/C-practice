@@ -45,11 +45,76 @@ int main(){
 
 
 
+/* second method (corrected)
+
+#include<iostream>
+using namespace std;
+
+int K(int m){
+	int length=1;
+  while(m!=1){
+    if(m%2==1){
+      m=3*m+1;
+    }
+    else{
+      m=m/2;
+    }
+    length ++;
+  }
+  return length;
+}
+
+
+int main(){
+	int i,j;
+	int iarr[1000001];
+	int sum= -1;
+	
+	while(cin>>i>>j){
+		if(i <= j){
+			for( int a=i; a<j+1; a++){
+				iarr[a] = K(a) ;
+			} 
+			for(int A=0; A<=j; A++){
+				
+				if(sum < iarr[A]){
+					sum= iarr[A];
+				}
+				else{
+					sum=sum; 
+				}
+			}
+		}
+		else if(j < i){
+			for( int a=j; a<i; a++){
+				iarr[a] = K(a) ;
+			}
+			for(int A=0; A<=i; A++){
+				
+				if(sum < iarr[A]){
+					sum= iarr[A];
+				}
+				else{
+					sum=sum; 
+				}
+			}
+		
+		} 
+	
+		cout << sum << endl; 	
+	}
+
+
+
+return 0;
+} 
+
+*/
 
 
 
 
-/*
+/* correct progress
 include<iostream>
 using namespace std;
 
