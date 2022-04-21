@@ -1,5 +1,5 @@
 //https://zerojudge.tw/ShowProblem?problemid=d255
-
+//此code 計算出在Ｎ範圍裡面每兩個數(ＣＮ取2)的最大公因數總和
 
 #include<iostream>
 using namespace std;
