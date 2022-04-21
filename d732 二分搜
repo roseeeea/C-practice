@@ -47,7 +47,76 @@ int main(){
 	}
 
 
+
+/* correct
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n, k;
+	int A[100000];
+	int B[100000];
+	
+	while(cin >> n >> k && n,k > 0){
+		
+		for(int i=0; i<n; i++){
+			cin >> A[i];
+		}
+		for(int i=0; i<k; i++){
+			cin >> B[i]; 
+		}
+		
+		
+		
+
+    for(int i=0; i<k; i++){
+      
+      int low = 0;
+      int upper = n-1;
+      int mid ;
+      int find=0; 
+      
+      /*因為我們不能再while判斷出沒在陣列的數字（輸出0）
+        故要另設一個常數判斷有沒有成功找到
+      */
+      
+      while(low<=upper){
+        
+        mid = (upper + low)/2;
+        
+        if(B[i]<A[mid]){
+          upper = mid-1;
+        }
+        else if(B[i]>A[mid]){
+          low = mid+1;
+        }
+        else if(B[i]==A[mid]){
+          find=1;
+          break;
+        }
+        
+      }
+
+      if(find==1){
+        cout << mid+1 << endl;
+      }
+      else{
+        cout << "0" << endl;
+      }
+
+      
+    }
+		
+			
+		
+	}
+	
+	return 0;
+}
 */
+
+
+/* before correcting
 #include<iostream>
 using namespace std;
 
@@ -61,18 +130,18 @@ int main(){
 		for(int i=0; i<n; i++){
 			cin >> arri[i];
 		}
-		for(int i=0; i<n; i++){
+		for(int i=0; i<n; i++){ //wrong n~k
 			cin >> arrx[i]; 
 		}
 		
 		
-		int low = 0;
+		int low = 0;			//位置放這裡表示後期while中改的會影響整體，應改在for裡面，讓每次在換新一輪（for i++），可以重置
 		int upper = n-1;
-		int mid = (low + upper)/2;
+		int mid = (low + upper)/2; 
 		
 		
 			for (int i=0; i<k; i++){
-				
+							//low upper....插在這裡
 				while( low <= upper)
 				if(arri[mid] < arrx[i] ){
 					low = mid +1;
@@ -93,3 +162,4 @@ int main(){
 	
 	return 0;
 }
+*/
