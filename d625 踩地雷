@@ -1,1 +1,149 @@
 https://zerojudge.tw/ShowProblem?problemid=d625
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+   
+    
+    while(cin>>n){
+        int arr1[n][n];
+        int arr2[n][n];
+        
+        
+        // turn the string into map made by number 0(bump) & 1(safe)
+        for(int i=0; i<n; i++){
+            string x;
+            cin >> x;
+            
+            for(int j=0; j<x.length(); j++){
+                if(x[j]=='*'){
+                    arr1[i][j]=0;
+                }
+                else if(x[j]=='-'){
+                    arr1[i][j]=1;
+                }
+            }
+        }
+        
+       
+        //detect if the right is the bump
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n-1; j++){
+                if(arr1[i][j+1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+      
+        
+        //detect if the left is the bump
+        for(int i=0; i<n; i++){
+            for(int j=1; j<n; j++){
+                if(arr1[i][j-1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+        
+        
+        //detect if the lower is the bump
+        for(int i=0; i<n-1; i++){
+            for(int j=0; j<n; j++){
+                if(arr1[i+1][j]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+       
+        
+        //detect if the upper is the bump
+        for(int i=1; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(arr1[i-1][j]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+        
+        
+        //detect if the lower-right is the bump
+        for(int i=0; i<n-1; i++){
+            for(int j=0; j<n-1; j++){
+                if(arr1[i+1][j+1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+        
+        
+        //detect if the lower-left is the bump
+        for(int i=0; i<n-1; i++){
+            for(int j=1; j<n; j++){
+                if(arr1[i+1][j-1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+        
+        
+        //detect if the upper-right is the bump
+        for(int i=1; i<n; i++){
+            for(int j=0; j<n-1; j++){
+                if(arr1[i-1][j+1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+        
+        //detect if the upper-left is the bump
+        for(int i=1; i<n; i++){
+            for(int j=1; j<n; j++){
+                if(arr1[i-1][j-1]==0){
+                    arr2[i][j]=arr2[i][j]+1;
+                }
+            }
+        }
+         
+        //exclude the bumps' number(give it an impossible number -1)
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(arr1[i][j]==0){
+                    arr2[i][j]=-1;
+                }
+            }
+        }
+       
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                cout << arr1[i][j];
+            }
+            cout << endl;
+        }
+        
+        
+        
+        
+        
+        
+        //cout the map
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(arr2[i][j]>0){
+                    cout << arr2[i][j]<<" ";
+                }
+                else if(arr2[i][j]==0){
+                    cout << "-";
+                }
+                else{
+                    cout << "*";
+                }
+            }
+            cout << endl;
+        }
+        
+    }
+    
+    
+    return 0;
+}
