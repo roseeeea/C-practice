@@ -1,15 +1,25 @@
-https://zerojudge.tw/ShowProblem?problemid=d625
+//https://zerojudge.tw/ShowProblem?problemid=d625
 #include<iostream>
 using namespace std;
 
 int main(){
     int n;
    
+    cout << "please enter the length of the side:"<< endl;
     
     while(cin>>n){
         int arr1[n][n];
         int arr2[n][n];
         
+        //initialize arr
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                arr1[i][j]=0;
+                arr2[i][j]=0;
+            }
+        }
+        
+        cout << "please enter the map(can only include *(bump) and -(safe place)) :" << endl;
         
         // turn the string into map made by number 0(bump) & 1(safe)
         for(int i=0; i<n; i++){
@@ -114,23 +124,13 @@ int main(){
             }
         }
        
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                cout << arr1[i][j];
-            }
-            cout << endl;
-        }
-        
-        
-        
-        
         
         
         //cout the map
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
                 if(arr2[i][j]>0){
-                    cout << arr2[i][j]<<" ";
+                    cout << arr2[i][j];
                 }
                 else if(arr2[i][j]==0){
                     cout << "-";
