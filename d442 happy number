@@ -9,6 +9,16 @@
  And i know it is ridiculous but this is the practice. c'est la vie.
 */
 
+/*
+ demonstration:
+ While every digit of the number(S0, from 1 to 109) adds up,it will become S1.
+ And sequence(S2. S3.....) will continue if the last is not sigle digit.
+ Happy number belongs to the number which last number of the sequence is 1.
+ The other is called unhappy number.
+ 
+ And i know it is ridiculous but this is the practice. c'est la vie.
+*/
+
 #include<iostream>
 using namespace std;
 
@@ -41,18 +51,18 @@ int main(){
         for(int i=1; i<=N; i++){
             cin>>S;
             
-            if(S<=109 && S>0){
+            if(S<109){
                 int x=happynumber(S);
         
                 if(x>0){
-                    cout << "case #"<< i <<" " << S << " is a Happy number." << endl;
+                    cout << "Case #"<< i <<": " << S << " is a Happy number." << endl;
                 }
                 else{
-                    cout << "case #"<< i <<" " << S << " is an Unhappy number." << endl;
+                    cout << "Case #"<< i <<": " << S << " is an Unhappy number." << endl;
                 }
             }
-            
         }
+            
     }
     
     return 0;
