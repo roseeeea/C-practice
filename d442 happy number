@@ -16,11 +16,15 @@ using namespace std;
 
 
 int happynumber(int x){
-    int a= x/100;
-    int b= (x/10-a*10);
-    int c= x-100*a-10*b;
     
-    int sum= a*a+b*b+c*c;
+    int sum =0;
+    
+    while(x>=10){
+     sum = sum +((x%10)*(x%10)); //最小位數相加（個位數）
+     x = x/10;  //消掉最小位數
+    }
+    
+    sum = sum + (x*x);
     
     if(sum==1){
         return 1;
