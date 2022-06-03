@@ -25,7 +25,7 @@ int happynumber(int x){
     if(sum==1){
         return 1;
     }
-    else if(sum>=10){
+    else if(sum!=4){      // 不能>=10，舉例:如果後來7，最後會是lucky
         return happynumber(sum);
     }
     else{
