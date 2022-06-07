@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+void push(int);
+int pop();
+void printstack();
+
+struct stack{
+    int s[100];
+    int top;
+    stack(){
+        top = -1;
+    }
+};
+stack st; //將stack概念製作戳來成為st的實體
+
+int main(){
+    for(int i=1; i<=4; i++){
+        push(i);
+        printstack();
+    }
+    cout << "從stack 取出最上面的元素" << pop() << endl;
+    printstack();
+    
+    return 0;
+}
+
+void push(int n){
+    if(st.top == 99){
+        cout << "stack 已滿" << endl;
+    }
+    else{
+        st.s[++st.top] =n; //先加後回傳，st.top=st.top+1; st.s[st.top]=n
+    }
+}
+
+int pop(){
+    if(st.top==-1){
+        cout << "Stack 是空"<<endl;
+        return 0; //每個path都要有回傳值
+    }
+    else{
+        return st.s[st.top--]; //先回傳厚剪，st.s[st.top]=n; st.top=st.top-1
+    }
+}
+
+void printstack(){
+    cout << "stack 目前儲存";
+    for(int i=0; i<=st.top; i++){
+        cout << st.s[i] << " ";
+    }
+}
