@@ -1,0 +1,54 @@
+ //https://zerojudge.tw/ShowProblem?problemid=b304
+#include<iostream>
+#include<stack>
+#include<string>
+using namespace std;
+
+int main(){
+    int n;
+    int pair;
+    
+    stack<char>st;
+    
+    while(cin >> n){      //一次讀完字串
+        for (int i=0; i<n; i++){
+            string s;
+            cin >> s;
+            getline(cin,s);
+            pair =0;
+            
+            while(!st.empty()){     //清空之前暫存
+                st.pop();
+            }
+        
+            for(int i=0; i<s.length(); i++){
+                if (s[i]== '['){
+                    st.push('[');   //儲存[
+                }
+                if (s[i]== '('){
+                    st.push('(');   //儲存(
+                }
+                if(s[i]==']' || s[i]==')'){
+                    if(st.size()>0){   //此確保[]的正確順序，而非][
+                        st.pop();
+                        pair++;
+                    }
+                    else{   //如果][，整個式子不成立
+                        pair = -1;
+                        break;
+                    }
+                }
+            }
+        
+            if(pair>=0){
+                cout << "Yes" << endl;
+            }
+            else{
+                cout << "No" << endl;
+            }
+            
+        }
+    }
+    
+    return 0;
+}
